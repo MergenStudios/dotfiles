@@ -1,0 +1,7 @@
+{{ if ne .chezmoi.os "linux" }}
+.config/zed
+{{ end }}
+
+{{ if ne .chezmoi.os "windows" }}
+AppData/Roaming/Zed
+{{ end }}

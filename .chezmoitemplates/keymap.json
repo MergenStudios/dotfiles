@@ -1,0 +1,134 @@
+// comment that is not in the keymap file on my system
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    },
+  },
+  {
+    "context": "((VimControl && !menu) || (!Editor && !Terminal))",
+    "bindings": {
+      "ctrl-w q": null,
+    },
+  },
+  {
+    "context": "((VimControl && !menu) || (!Editor && !Terminal))",
+    "bindings": {
+      "ctrl-w ctrl-q": null,
+    },
+  },
+  {
+    "context": "((VimControl && !menu) || (!Editor && !Terminal))",
+    "bindings": {
+      "ctrl-w c": null,
+    },
+  },
+  {
+    "context": "((VimControl && !menu) || (!Editor && !Terminal))",
+    "bindings": {
+      "ctrl-w ctrl-c": null,
+    },
+  },
+  {
+    "context": "((vim_mode == helix_normal || vim_mode == helix_select) && !menu)",
+    "bindings": {
+      "space w q": null,
+    },
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-w": null,
+    },
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-f4": null,
+    },
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-k right": null,
+    },
+  },
+  {
+    "context": "((vim_mode == normal || vim_mode == helix_normal) && !menu)",
+    "bindings": {
+      "shift-j": null,
+    },
+  },
+  {
+    "context": "((vim_mode == normal || vim_mode == helix_normal) && !menu)",
+    "bindings": {
+      "r": null,
+    },
+  },
+  {
+    "context": "vim_operator == d",
+    "bindings": {
+      "d": null,
+      "s": null,
+      "v": null,
+      "o": null,
+      "shift-o": null,
+      "p": null,
+      "u": null,
+      "shift-u": null,
+    },
+  },
+  {
+    "context": "Pane && !(vim_mode == insert) && !BufferSearchBar",
+    "bindings": {
+      "space p": "file_finder::Toggle",
+      "space shift-p": "command_palette::Toggle",
+      "space ,": "zed::OpenSettings",
+      "space q": "project_symbols::Toggle",
+      "space s": "vim::Search",
+      "space f": "workspace::ToggleZoom",
+      "space รถ": "terminal_panel::Toggle",
+    },
+  },
+  {
+    "context": "Pane && !(vim_mode == insert)",
+    "bindings": {
+      "f l": ["workspace::MoveItemToPaneInDirection", { "direction": "right" }],
+      "f h": ["workspace::MoveItemToPaneInDirection", { "direction": "left" }],
+      "f w": "workspace::Save",
+    },
+  },
+  {
+    "context": "Pane && !(vim_mode == insert)",
+    "bindings": {
+      "d l": "workspace::ActivatePaneRight",
+      "d h": "workspace::ActivatePaneLeft",
+    },
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "r": "editor::Rename",
+      "q": "pane::CloseActiveItem",
+    },
+  },
+  {
+    "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
+    "bindings": {
+      // Traditional Vim behavior
+      "q": "vim::AnyQuotes",
+      "b": "vim::AnyBrackets",
+
+      // mini.ai plugin behavior
+      "Q": "vim::MiniQuotes",
+      "B": "vim::MiniBrackets",
+    },
+  },
+]
