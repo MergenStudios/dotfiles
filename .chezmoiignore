@@ -4,5 +4,5 @@
 {{ end }}
 
 {{ if ne .chezmoi.os "windows" }}
-AppData/Roaming/Zed
+AppData/
 {{ end }}
