@@ -1,5 +1,5 @@
 {{ if ne .chezmoi.os "linux" }}
-dot_bashrc
+.bashrc
 .config/zed
 {{ end }}
 
