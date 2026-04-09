@@ -11,12 +11,31 @@ return {
         picker = {
             sources = {
                 explorer = {
+                    win = {
+                        list = {
+                            keys = {
+                                ["a"] = "explorer_add",
+                                ["d"] = "explorer_del",
+                                ["r"] = "explorer_rename",
+                                ["y"] = "explorer_yank",
+                                ["p"] = "explorer_paste",
+                                ["m"] = "explorer_move",
+
+                                ["zC"] = "explorer_close_all",
+                                ["zc"] = "explorer_close",
+
+                                ["."] = "explorer_focus_cwd",
+                            },
+                        },
+                    },
                     layout = {
                         layout = {
                             width = 25,
                             position = "right",
                         },
                     },
+                    hidden = true,
+                    ignored = true,
                 },
             },
         },
