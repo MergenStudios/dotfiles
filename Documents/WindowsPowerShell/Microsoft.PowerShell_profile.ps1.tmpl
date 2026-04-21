@@ -1,0 +1,27 @@
+{{if .enable_starship}}# starship config
+$ENV:STARSHIP_CONFIG = "$HOME\.config\starship\starship.toml"
+Invoke-Expression (&starship init powershell)
+$env:VIRTUAL_ENV_DISABLE_PROMPT = 1{{ end }}
+# better cd test
+Invoke-Expression (& { (zoxide init powershell --cmd cd | Out-String) })
+
+# better ls
+if (Get-Alias ls -ErrorAction SilentlyContinue) {
+    Remove-Item Alias:ls
+}
+
+function ls {
+     eza --icons="auto" --color="auto" --hyperlink --git -l --no-user --no-permissions --no-time -T --level 1 $args
+}
+
+# misc aliases
+Set-Alias -Name exp -Value explorer.exe
+Set-Alias -Name acv -Value .\.venv\Scripts\activate
+Set-Alias -Name n -Value {{ index . `nvim_path` | default `nvim` }}
+
+# these cant be an alias
+function cpwd {
+    (Get-Location).Path | Set-Clipboard -NoNewline
+}
+
+# j and jd alias this is a test

@@ -1,0 +1,10 @@
+[metadata]
+name = "git-stash"
+description = "List stashes in git repository"
+requirements = ["git"]
+
+[source]
+command = "git stash list --format='%gd (%cr): %s'"
+
+[preview]
+command = "git stash show --stat --color=always {split: :0}"
