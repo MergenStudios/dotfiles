@@ -4,7 +4,17 @@ description = "List stashes in git repository"
 requirements = ["git"]
 
 [source]
-command = "git stash list --format='%gd (%cr): %s'"
+command = "git stash list --format='%gd:%s (%cr): '"
 
 [preview]
-command = "git stash show --stat --color=always {split: :0}"
+command = [
+    "git stash show --stat --color=always {split::0}",
+    "git stash show -p --color=always {split::0}"
+]
+
+[keybindings]
+"enter" = "actions:view_full_diff"
+
+[actions.view_full_diff]
+command = "git stash show -p --color=always {split::0} | less -R"
+mode = "fork"

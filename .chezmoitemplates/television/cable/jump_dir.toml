@@ -1,0 +1,9 @@
+[metadata]
+name = "jump_dir"
+description = "Jump to directories nested within the current directory"
+
+[source]
+command = "fd -t d"
+
+[preview]
+command = 'eza -T --level 1 {}'

@@ -1,0 +1,9 @@
+[metadata]
+name = "jump"
+description = "Jump to directories recently visited with zoxide"
+
+[source]
+command = "zoxide query -l"
+
+[preview]
+command = 'eza -T --level 1 {}'

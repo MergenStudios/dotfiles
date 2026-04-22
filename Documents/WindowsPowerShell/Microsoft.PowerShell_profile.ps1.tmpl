@@ -24,4 +24,18 @@ function cpwd {
     (Get-Location).Path | Set-Clipboard -NoNewline
 }
 
-# j and jd alias this is a test
+function j {
+    $target = tv jump
+
+    if ($target) {
+        cd $target
+    }
+}
+
+function jd {
+    $target = tv jump_dir
+
+    if ($target) {
+        cd $target
+    }
+}
