@@ -115,16 +115,15 @@ alias grep='rg -n'
 
 j() {
     local dir
-    dir=$(zoxide query -l | tv) && [ -n "$dir" ] && cd "$dir"
+    dir=$(tv jump) && [ -n "$dir" ] && cd "$dir"
 }
 
 
 jd() {
     local dir
-    dir=$(tv dirs) && [ -n "$dir" ] && cd "$dir"
+    dir=$(tv jump_dir) && [ -n "$dir" ] && cd "$dir"
 }
 
-export STARSHIP_CONFIG=/mnt/c/Users/pault/.config/starship/starship.toml
 eval "$(starship init bash)"
 
 # zoxide for better cd
